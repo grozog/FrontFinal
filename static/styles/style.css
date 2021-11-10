@@ -1,0 +1,231 @@
+body {
+	margin: 0px;
+	height: 100vh;
+	/* display: flex; */
+	text-align: center;
+	flex-direction: column;
+	background-color: #b7dcebce;
+	font-family: sans-serif;
+}
+
+/* Estilos de Formulario Disfraz */
+
+.disfraz-container {
+	background-color: rgba(43, 136, 108, 0.5);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	flex-direction: column;
+}
+
+.clientes-container {
+	background-color: rgba(47, 148, 118, 0.2);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	flex-direction: column;
+}
+
+.mensajes-container {
+	background-color: rgba(43, 136, 108, 0.5);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	flex-direction: column;
+}
+
+.disfraz-container h2,
+.clientes-container h2,
+.mensajes-container h2 {
+	flex-basis: 0;
+	flex-grow: 999;
+}
+
+.fields {
+	margin-top: 10px;
+	margin-bottom: 15px;
+	flex-basis: 20rem;
+	flex-grow: 1;
+}
+
+.botones {
+	flex-basis: 0;
+	flex-grow: 999;
+}
+
+input {
+	margin: 4px;
+	border: none;
+	outline: none;
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	border-radius: 20px;
+	box-sizing: border-box;
+	width: 220px;
+	height: 35px;
+	padding: 0 18px;
+}
+
+/* Estilos de Botones */
+
+button {
+	border: none;
+	margin: 8px;
+	padding: 8px 10px;
+	text-align: center;
+	text-decoration: none;
+	background-color: #fff;
+	color: rgb(0, 0, 0);
+	display: inline-block;
+	font-size: 15px;
+	border-radius: 12px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #009879; /* Green */
+	color: white;
+	box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.24), 0 10px 50px 0 rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+	background-color: #009879;
+	box-shadow: 10 5px #666;
+	transform: translateY(5px);
+}
+
+/*  
+
+*/
+
+/* Estilos de las tablas usando clase .styled-table */
+#responseCostume,
+#responseClients,
+#responseMsg {
+	display: flex;
+	justify-content: center;
+}
+
+.styled-table {
+	font-weight: bold;
+	border-collapse: collapse;
+	margin: 20px 0;
+	font-size: 0.9em;
+	font-family: sans-serif;
+	min-width: 400px;
+	border-radius: 5px 5px 0 0;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+	background-color: #009879;
+	color: #ffffff;
+	text-align: center;
+}
+.styled-table th,
+.styled-table td {
+	padding: 1px 15px;
+}
+.styled-table tbody tr {
+	border-bottom: 1px solid #dddddd;
+	text-align: left;
+}
+.styled-table tbody tr:nth-of-type(even) {
+	background-color: #f3f3f3;
+}
+.styled-table tbody tr:last-of-type {
+	border-bottom: 2px solid #009879;
+}
+.styled-table tbody tr:hover {
+	font-weight: bold;
+	color: #009879;
+}
+
+/* Estilos para tabla de Clientes .styled-table-c */
+
+.styled-table-c {
+	font-weight: bold;
+	border-collapse: collapse;
+	margin: 20px 0;
+	font-size: 0.9em;
+	font-family: sans-serif;
+	min-width: 400px;
+	border-radius: 5px 5px 0 0;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table-c thead tr {
+	background-color: #009879;
+	color: #ffffff;
+	text-align: left;
+}
+.styled-table-c th,
+.styled-table-c td {
+	padding: 1px 15px;
+}
+.styled-table-c tbody tr {
+	border-bottom: 1px solid #dddddd;
+	text-align: left;
+}
+.styled-table-c tbody tr:nth-of-type(even) {
+	background-color: #f3f3f3;
+}
+.styled-table-c tbody tr:last-of-type {
+	border-bottom: 2px solid #009879;
+}
+.styled-table-c tbody tr:hover {
+	font-weight: bold;
+	color: #009879;
+}
+
+/* Estilos para tabla de Mensajes .styled-table-m */
+
+.styled-table-m {
+	font-weight: bold;
+	border-collapse: collapse;
+	margin: 20px 0;
+	font-size: 0.9em;
+	font-family: sans-serif;
+	min-width: 400px;
+	border-radius: 5px 5px 0 0;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table-m thead tr {
+	background-color: #009879;
+	color: #ffffff;
+	text-align: left;
+}
+.styled-table-m th,
+.styled-table-m td {
+	padding: 1px 15px;
+}
+.styled-table-m tbody tr {
+	border-bottom: 1px solid #dddddd;
+	text-align: left;
+}
+.styled-table-m tbody tr:nth-of-type(even) {
+	background-color: #f3f3f3;
+}
+.styled-table-m tbody tr:last-of-type {
+	border-bottom: 2px solid #009879;
+}
+.styled-table-m tbody tr:hover {
+	font-weight: bold;
+	color: #009879;
+}
+
+.footer {
+	padding: 200px;
+	height: 100px;
+	background-color: rgba(47, 148, 118, 0.2);
+}
+
+h1 {
+	padding-top: 50px;
+	padding-bottom: 30px;
+	margin: 0;
+	background-color: rgba(47, 148, 118, 0.2);
+}

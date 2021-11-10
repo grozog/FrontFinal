@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/cliente.js"></script>
+    <script src="js/disfraz.js"></script>
+    <script src="js/mensaje.js"></script>
+    <script src="js/categoria.js"></script>
+    <script src="js/reserva.js"></script>
+    <link rel="stylesheet" href="styles/style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda de Disfraces</title>
+</head>
+
+<body>
+    <h1>Tienda de Disfraces</h1>
+    <button onclick="formularioDisfraz()">Formulario de Disfraz</button>
+    <button onclick="formularioClientes()">Registro de Clientes</button>
+    <button onclick="formularioMensajes()">Registro de Mensajes</button>
+    <button onclick="formularioCategorias()">Registro de Categorias</button>
+    <button onclick="formularioReservaciones()">Registro de Reservaciones</button> <br />
+    <div id=divTablaDisfraz visibility: hidden>
+        <br />
+        <h2>Disfraces</h2>
+        <button onclick="consultarDisfraces()">Consultar Disfraces</button>
+        <br /><br />
+        <table>
+            <td>Nombre</td>
+            <td><input type="text" id="NameDisfraz" placeholder="Nombre"></input></td>
+            <td hidden><input type="number" id="idDisfraz" placeholder="Codigo"></input></td>
+            <tr>
+                <td>Marca</td>
+                <td><input type="text" id="Brand" placeholder="Marca"></input></td>
+            </tr>
+            <tr>
+                <td>Año</td>
+                <td><input type="number" id="Year" placeholder="Año"></input></td>
+            </tr>
+            <tr>
+                <td>Descripcion</td>
+                <td><input type="text" id="Description" placeholder="Descripcion"></input></td>
+            </tr>
+            <tr>
+                <td>Categoria</td>
+                <td><select id="select-category"></select></td>
+                <script type="text/javascript">
+                    window.onload = autoTraeCategoria();
+                   </script>
+            </tr>
+        </table>
+        <br />
+        <button onclick="ingresarDisfraz()">Ingresar disfraz</button>
+        <button onclick="actualizarDisfraz()">Actualizar</button>
+        <button onclick="eliminarDisfraz()">Eliminar</button>
+        <button onclick="$('#divTablaDisfraz').hide()"> Cancelar</button>
+        <br /><br />
+        <div id="idDivConsultaDisfraz"></div>
+    </div>
+    <div id=divRegClientes visibility: hidden>
+        <br />
+        <h2>Clientes</h2>
+        <button onclick="consultarClientes()">Consultar Clientes</button>
+        <br /><br />
+        <table>
+            <tr>
+                <td>Nombre</td>
+                <td hidden><input type="number" id="idCliente"></input></td>
+                <td><input type="text" id="NameCliente" placeholder="Nombre"></input></td>
+            </tr>
+            <tr>
+                <td>Contraseña</td>
+                <td><input type="password" id="passClient" placeholder="password"></input></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="email" id="Email" placeholder="Email"></input></td>
+            </tr>
+            <tr>
+                <td>Edad</td>
+                <td><input type="number" id="Edad" placeholder="Edad"></input></td>
+            </tr>
+        </table>
+        <br />
+        <button onclick="crearCliente()">Crear Cliente</button>
+        <button onclick="actualizarCliente()">Actualizar</button>
+        <button onclick="eliminarCliente()">Eliminar</button>
+        <button onclick="$('#divRegClientes').hide()"> Cancelar</button>
+        <br /><br />
+        <div id="idDivConsultaClientes"></div>
+    </div>
+    <div id=divRegMensajes visibility: hidden>
+        <br />
+        <h2>Mensajes</h2>
+        <button onclick="consultarMensajes()">Consultar Mensajes</button>
+        <br /><br />
+        <table>
+            <tr>
+                <td>Mensaje</td>
+                <td hidden><input type="number" id="idMessage" placeholder="Id"></input></td>
+                <td><input type="text" id="MessageText" placeholder="Mensaje"></input></td>
+            </tr>
+            <tr>
+                <td>Clientes</td>
+                <td><select id="select-client">
+                    <option value="">Seleccionar Cliente</option>
+                    <script type="text/javascript">
+                        window.onload = autoInicioRelacionCliente();
+                     </script></td>
+            </tr>
+            <tr>
+                <td>Disfraz</td>
+                <td><select id="select-partyroom">
+                    <option value="">Seleccionar Disfraz</option>
+                </select>
+                <script type="text/javascript">
+                    window.onload = autoInicioPartyroom();
+                </script></td>
+            </tr>
+
+
+        </table>
+        <br />
+        <button onclick="crearMensaje()">Enviar Mensaje</button>
+        <button onclick="actualizarMensaje()">Actualizar</button>
+        <button onclick="eliminarMensaje()">Eliminar</button>
+        <button onclick="$('#divRegMensajes').hide()"> Cancelar</button>
+        <br /><br />
+        <div id="idDivConsultaMensajes"></div>
+    </div>
+    <div id=divRegCategorias visibility: hidden>
+        <br />
+        <h2>Categoria</h2>
+        <button onclick="consultarCategorias()">Consultar Categorias</button>
+        <br /><br />
+        <table>
+            <tr>
+                <td>Categoria</td>
+                <td hidden><input type="number" id="idCategoria" placeholder="Id"></input></td>
+                <td><input type="text" id="nameCategoria" placeholder="Categoria"></input></td>
+            </tr>
+            <tr>
+                <td>Descripcion</td>
+                <td><input type="text" id="descCategoria" placeholder="Descripcion"></input></td>
+            </tr>
+        </table>
+        <br />
+        <button onclick="crearCategoria()">Enviar Categoria</button>
+        <button onclick="actualizarCategoria()">Actualizar</button>
+        <button onclick="eliminarCategoria()">Eliminar</button>
+        <button onclick="$('#divRegCategorias').hide()"> Cancelar</button>
+        <br /><br />
+        <div id="idDivConsultaCategorias"></div>
+    </div>
+    <div id=divRegReservaciones visibility: hidden>
+        <br />
+        <h2>Reservaciones</h2>
+        <button onclick="consultarReservaciones()">Consultar Reservaciones</button>
+        <br /><br />
+        <table>
+            <tr>
+                <td>Fecha de inicio</td>
+                <td hidden><input type="number" id="idReservation" placeholder="Id"></input></td>
+                <td><input type="date" id="startDate" placeholder="Fecha de inicio"></input></td>
+            </tr>
+            <tr>
+                <td>Fecha devolucion</td>
+                <td><input type="date" id="devolutionDate" placeholder="Fecha devolucion"></input></td>
+            </tr>
+        </table>
+        <br />
+        <button onclick="crearReservacion()">Enviar Reservacion</button>
+        <button onclick="actualizarReservacion()">Actualizar</button>
+        <button onclick="eliminarReservacion()">Eliminar</button>
+        <button onclick="$('#divRegReservaciones').hide()"> Cancelar</button>
+        <br /><br />
+        <div id="idDivConsultaReservaciones"></div>
+    </div>
+</body>
+
+</html>
